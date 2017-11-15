@@ -5,7 +5,20 @@ package cc.somkiat.basicunittesting;
  */
 
 class NameValidation {
-    public boolean isEmpty(String name) {
-        return !name.equals("");
+    private boolean result;
+    public void isEmpty(String name) {
+        if(name.isEmpty()) result = false;
+    }
+
+    public void longLength(String name) {
+        if(name.length() > 20) result = false;
+    }
+
+    public void shortLength(String name) {
+        if(name.length() < 2) result = false;
+    }
+
+    public boolean isResult() {
+        return result;
     }
 }
